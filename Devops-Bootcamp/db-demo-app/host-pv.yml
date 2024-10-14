@@ -1,0 +1,16 @@
+# THIS IS BASICALLY ASSIGNING STORAGE OR VOLUME  OR SPACE THRUOGH WHICH DATA BASE CAN WORK 
+
+apiversion: v1
+kind: PersistentVolume
+metadata: 
+  name: host-pv
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/
+    type: DirectoryOrCreate

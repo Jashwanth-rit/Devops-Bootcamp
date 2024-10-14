@@ -1,0 +1,122 @@
+kubectl create deployment my-nginx --image=nginx:latest
+minikube delete
+minikube start
+docker --version
+minikube status
+kubectl config current-context
+minikube logs
+kubectl create deployment my-nginx --image=nginx:latest
+kubectl config use-context minikube
+kubectl get pods
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+minikube service my-todo
+kubectl get nodes
+kubectl get services
+kubectl set image deployment/my-nginx nginx=nginx:latest
+kubectl expose deployment my-nginx --type=LoadBalancer --port=80
+kubectl logs my-nginx-c78685b99-9tqlv
+docker push jashwanth0/todo
+docker images
+docker build -t jashwanth0/todo .
+kubectl set image deployment/<deployment-name> <container-name>=<new-image>:<tag>
+kubectl rollout status deployment/my-todo
+kubectl rollout undo deployment/my-todo
+
+
+
+
+# Kubernetes and Docker Commands Notes
+
+## Kubernetes Commands
+
+1. **Create a Deployment**:
+   kubectl create deployment my-nginx --image=nginx:latest
+   Creates a deployment named `my-nginx` using the `nginx:latest` image.
+
+2. **Delete Minikube Cluster**:
+   minikube delete
+   Deletes the Minikube cluster.
+
+3. **Start Minikube Cluster**:
+   minikube start
+   Starts a new Minikube cluster.
+
+4. **Check Docker Version**:
+   docker --version
+   Displays the version of Docker installed on your machine.
+
+5. **Check Minikube Status**:
+   minikube status
+   Shows the current status of the Minikube cluster.
+
+6. **Get Current Kubernetes Context**:
+   kubectl config current-context
+   Displays the current context set in your Kubernetes configuration.
+
+7. **View Minikube Logs**:
+   minikube logs
+   Fetches logs from the Minikube instance.
+
+8. **Create Deployment Again**:
+   kubectl create deployment my-nginx --image=nginx:latest
+   Attempts to create the same deployment again.
+
+9. **Switch Context to Minikube**:
+   kubectl config use-context minikube
+   Sets the current context to Minikube.
+
+10. **Get Pods**:
+    kubectl get pods
+    Lists all the pods running in the current namespace.
+
+11. **Describe a Pod**:
+    kubectl describe pod <pod-name>
+    Shows detailed information about a specific pod.
+
+12. **View Logs of a Pod**:
+    kubectl logs <pod-name>
+    Fetches logs from a specific pod.
+
+13. **Access Minikube Service**:
+    minikube service my-todo
+    Opens the service named `my-todo` in your web browser.
+
+14. **Get Nodes**:
+    kubectl get nodes
+    Lists all nodes in the cluster.
+
+15. **Get Services**:
+    kubectl get services
+    Lists all services running in the current namespace.
+
+16. **Set Image for Deployment**:
+    kubectl set image deployment/my-nginx nginx=nginx:latest
+    Updates the container image of the `my-nginx` deployment.
+
+17. **Expose Deployment as a Service**:
+    kubectl expose deployment my-nginx --type=LoadBalancer --port=80
+    Creates a LoadBalancer service for the `my-nginx` deployment.
+
+18. **View Logs of a Specific Pod**:
+    kubectl logs my-nginx-c78685b99-9tqlv
+    Fetches logs from a specific pod instance.
+
+## Docker Commands
+
+19. **Push Docker Image to Repository**:
+    docker push jashwanth0/todo
+    Pushes the local Docker image to the Docker registry.
+
+20. **List Docker Images**:
+    docker images
+    Displays all Docker images available locally.
+
+21. **Build Docker Image**:
+    docker build -t jashwanth0/todo .
+    Builds a Docker image from the current directory.
+
+22. **Set Image for Deployment**:
+    kubectl set image deployment/<deployment-name> <container-name>=<new-image>:<tag>
+    Updates the specified container image for a deployment.
+

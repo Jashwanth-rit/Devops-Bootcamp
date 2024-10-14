@@ -1,0 +1,49 @@
+# same pod , two or more container : just creating the container inside multiple images
+#  as done down
+
+
+# advantages: distribution of work and data among pods, 
+# disadavntage: distribution of data among two pod , when we get , the data prsent in single pod only get , but data in other will be missing 
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-mongo-db
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-mongo-db
+  template:
+    metadata:
+      labels:
+        app: node-mongo-db
+    spec:
+      containers:
+      - name: mongo-container
+        image: jashwanth0/myapp:01 
+      - name: mongodb
+        image: mongo:latest
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+spec:
+  selector:
+    app: node-mongo-db
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 3000
+  type: LoadBalancer
+
+
+  # TO MAKE ONE PORT ONE CONTainer ,  WE MAKE HOST AND PORT DYNAMIC 
+  # STEP 1 : GOTO INDEX.JS AND MAKE LOCALHOST AND PORT DYNAMIC 
+  # STEP 2 : CREATE IMAGE , PUSH IMAGE,
+  # STEP 3 : REFFER OTHER YML FILES AND INDEX.JS 
+        
