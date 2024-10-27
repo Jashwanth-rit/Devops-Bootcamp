@@ -1,0 +1,44 @@
+# Nested sequences
+-
+  - jk
+  - pk
+  - ak
+-
+  - jk
+  - pk
+  - ak
+
+# maps 
+
+cities:
+  native: "Hassan"
+  work: "Bengaluru"
+name: "jk"
+
+# same as 
+cities: {native: "Hassan",work: "Bengaluru"}
+
+# pairs 
+
+pairs: !!pairs
+ - job: student
+ - job: teacher
+
+pairs: !!pairs [job: student,job: teacher]
+
+# sets 
+names: !!set
+ ? kunal
+ ? jay
+ ? keerthi
+
+
+# dictionary 
+people: !!omap
+ - jay:
+    name: jay
+    age: 34
+ - keerthi:
+    name: keerthi
+    age: 43
+    

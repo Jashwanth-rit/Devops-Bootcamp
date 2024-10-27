@@ -1,0 +1,66 @@
+# Key-value pairs
+1: "this is one"
+2: "this is two"
+---
+# Lists
+list_of_places:
+  - city
+  - town
+  - village
+---
+cities:
+  - "Hassan"
+  - "Bengaluru"
+  - "Mangaluru"
+
+...
+
+# '---' -> indicates that those are diffrent documents or data 
+# '...' -> indiactes document end here 
+
+
+# other ways of writing these 
+
+cities: ["hassan", "bengaluru", "mangaluru"]
+{cities:"hassan",age:46}
+
+
+# Datatype in YAML
+
+# Strings 
+name: "jk"
+surname: "chintu"
+father_name: 'Raghu'
+
+# Sentence 
+Bio: |
+  This is my bio, read more to know about me,
+  from RIT, eager to learn about technology.
+
+
+Bio: >
+This is my bio,
+read more to know about me,
+from RIT, eager to learn about technology.
+
+# The about is same as 
+Bio: This is my bio, read more to know about me, from RIT, eager to learn about technology.
+
+
+# Integers 
+
+number: 45
+digit: 100
+boolean: n # n,N,No,false,False,FALSE. SAME FOR TRUE.
+
+# SPICIFYING DATA TYPE 
+
+num: !!int 45 # 0,-45,0b1101,02313,0*45,+545_000,6.032E56
+boolean: !!bool n 
+father_name: !!str 'Raghu'
+money: !!null null # or Null
+
+
+
+
+

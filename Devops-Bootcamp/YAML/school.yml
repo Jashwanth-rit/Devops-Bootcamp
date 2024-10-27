@@ -1,0 +1,8 @@
+School:
+  name: "DPS"
+  principal: "Someone"
+  Students:
+    Student:
+      rno: 100
+      name: "jk"
+      marks: 100
